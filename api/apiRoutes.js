@@ -15,9 +15,11 @@ router.post('/login', (req, res, next) => {
         const user = users.find(u => u.username === username && u.password === password)
 
         if (user) {
-            return res.status(302).redirect('/dashboard') // Serve dashboard through routing
+            // Redirect to dashboard route (handled by server.js)
+            return res.redirect('/api/dashboard')
         } else {
-            return res.status(302).redirect('/register') // Serve register page through routing
+            // Redirect to register page
+            return res.redirect('/api/register')
         }
     })
 })
@@ -39,7 +41,7 @@ router.post('/register', (req, res, next) => {
         fs.writeFile(path.join(__dirname, '../models/users.json'), JSON.stringify(users, null, 2), (err) => {
             if (err) return next(err)
 
-            res.status(302).redirect('/') // Redirect to login page
+            res.redirect('/') // Redirect to login page
         })
     })
 })
