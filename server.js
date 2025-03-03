@@ -3,49 +3,47 @@ const path = require('path')
 const app = express()
 const PORT = 8080
 
-// Import all middlewares
-const logger = require('./middlewares/logger')
-const errorHandler = require('./middlewares/errorHandler')
-const maintenance = require('./middlewares/maintenance')
-const requestTimer = require('./middlewares/requestTimer')
+// Middlewares
+const logger = require('./Middlewares/logger')
+const errorHandler = require('./Middlewares/errorHandler')
+const maintenance = require('./Middlewares/maintenance')
+const requestTimer = require('./Middlewares/requestTimer')
 
-// Middleware to handle JSON and URL-encoded data
+// Core middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Custom middlewares
 app.use(logger)
 app.use(requestTimer)
-app.use(maintenance)  // This will block requests if maintenance mode is enabled
+app.use(maintenance)
 
-// Serve static files (optional CSS/JS/images if needed later)
+// Serve static files from public/
 app.use(express.static(path.join(__dirname, 'public')))
 
-// Routes
+// Mount API routes (from nodejsmodules/api)
 const apiRoutes = require('./api/apiRoutes')
 app.use('/api', apiRoutes)
 
+// Serve login page at root
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'login.html'))
 })
 
-app.get('/api/dashboard', (req, res, next) => {
-    // Protect dashboard using authChecker (if required)
-    const authChecker = require('./middlewares/authChecker')
-    authChecker(req, res, next)
-}, (req, res) => {
+// Serve dashboard
+app.get('/api/dashboard', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'dashboard.html'))
 })
 
+// Serve register page
 app.get('/api/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'register.html'))
 })
 
-// Error handler at the end
+// Global error handler
 app.use(errorHandler)
 
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`)
 })
-
