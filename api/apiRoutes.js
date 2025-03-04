@@ -59,4 +59,23 @@ router.get('/aboutus', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/aboutus.html'))
 })
 
+// Events page route
+router.get('/events', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/events.html'))
+})
+
+// Gallery page route
+router.get('/gallery', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/gallery.html'))
+})
+
+// Faculty page route
+router.get('/faculty', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/faculty.html'))
+})
+
+// Courses page route
+router.get('/courses', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/courses.html'))
+})
 module.exports = router
