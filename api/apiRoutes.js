@@ -78,4 +78,9 @@ router.get('/faculty', (req, res) => {
 router.get('/courses', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/courses.html'))
 })
+
+// Login page route(without credentials)
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/login.html'))
+})
 module.exports = router
