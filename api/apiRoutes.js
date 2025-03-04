@@ -15,10 +15,8 @@ router.post('/login', (req, res, next) => {
         const user = users.find(u => u.username === username && u.password === password)
 
         if (user) {
-            // Redirect to dashboard route (handled by server.js)
             return res.redirect('/api/dashboard')
         } else {
-            // Redirect to register page
             return res.redirect('/api/register')
         }
     })
@@ -44,6 +42,21 @@ router.post('/register', (req, res, next) => {
             res.redirect('/') // Redirect to login page
         })
     })
+})
+
+// Dashboard route
+router.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/dashboard.html'))
+})
+
+// Contact page route
+router.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/contact.html'))
+})
+
+// About Us page route
+router.get('/aboutus', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/aboutus.html'))
 })
 
 module.exports = router
