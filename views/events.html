@@ -1,8 +1,182 @@
 <!DOCTYPE html>
-<html>
-<head><title>Events - Group of Institutes</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Events - Group of Institutes</title>
+    <link rel="stylesheet" href="style.css"> <!-- Optional CSS Link -->
+</head>
+<style>
+    /* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #598db5;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Events Section */
+.events {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3;
+}
+
+.event-card {
+    background: #ffffff;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 5px solid #0056b3;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h2 {
+    color: #333;
+}
+
+.event-card p {
+    margin: 5px 0;
+}
+
+button {
+    background: #0056b3;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #003d80;
+}
+
+footer {
+            width: 100%;
+            height: 12%;
+            text-align: center;
+            color: #d1d1e0;
+            background-color: rgba(42, 42, 64, 0.8);
+            bottom: 0;
+            left: 0;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        footer button {
+            margin: 5px;
+            width: 100%;
+            padding: 5px 10px;
+            background-color: #5a5aa6;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        footer button:hover {
+            background-color: #444488;
+        }
+        footer div {
+            display: flex;
+            gap: 10px; /* Added gap between buttons */
+        }
+</style>
 <body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/api/dashboard">Home</a></li>
+            <li><a href="/api/aboutus">Faculty</a></li>
+            <li><a href="/api/events">Events</a></li>
+            <li><a href="/api/courses">Courses</a></li>
+            <li><a href="/api/gallery">Gallery</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<section class="events">
     <h1>Upcoming Events</h1>
-    <p>Details of upcoming events at our institute.</p>
+    <p>Explore the latest events happening at Group of Institutes.</p>
+
+    <div class="event-card">
+        <h2>Annual Science Exhibition</h2>
+        <p>Date: 25th March 2025</p>
+        <p>Venue: Auditorium Hall</p>
+        <p>Description: Showcasing innovative projects by students from all departments.</p>
+        <button>Know More</button>
+    </div>
+
+    <div class="event-card">
+        <h2>Sports Week</h2>
+        <p>Date: 1st April - 7th April 2025</p>
+        <p>Venue: Sports Ground</p>
+        <p>Description: Inter-college tournaments in cricket, football, and athletics.</p>
+        <button>Know More</button>
+    </div>
+
+    <div class="event-card">
+        <h2>Cultural Fest</h2>
+        <p>Date: 15th April 2025</p>
+        <p>Venue: Main Auditorium</p>
+        <p>Description: Celebrate culture with music, dance, and drama performances.</p>
+        <button>Know More</button>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
+    <div>
+        <form action="/api/aboutus" method="GET">
+            <button type="submit">About Us</button>
+        </form>
+        <form action="/api/contact" method="GET">
+            <button type="submit">Contact</button>
+        </form>
+    </div>
+</footer>
 </body>
 </html>
