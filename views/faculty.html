@@ -1,8 +1,158 @@
 <!DOCTYPE html>
-<html>
-<head><title>Faculty - Group of Institutes</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #0d1b2a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            flex: 1;
+        }
+        .faculty-card {
+            background-color: #1b263b;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out;
+        }
+        .faculty-card:hover {
+            transform: scale(1.07);
+        }
+        .faculty-card h2 {
+            margin: 0;
+            color: #f4a261;
+        }
+        .faculty-card p {
+            margin: 5px 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #0056b3, #14213d);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #14213d, #0d1b2a);
+            padding: 20px 0;
+            animation: slideUp 0.8s ease-in-out;
+            margin-top: auto;
+        }
+        footer button {
+            margin: 10px;
+            width: 15%;
+            padding: 10px;
+            background-color: #f4a261;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        footer button:hover {
+            background-color: #e76f51;
+            transform: scale(1.1);
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
 <body>
-    <h1>Our Faculty</h1>
-    <p>Meet our faculty members.</p>
+    <header class="header">
+        <h1>Our Faculty</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="faculty-card">
+            <h2>Dr. John Doe</h2>
+            <p>Professor of Computer Science</p>
+            <p>Expertise: Artificial Intelligence, Machine Learning</p>
+        </div>
+        <div class="faculty-card">
+            <h2>Dr. Jane Smith</h2>
+            <p>Associate Professor of Mathematics</p>
+            <p>Expertise: Algebra, Number Theory</p>
+        </div>
+        <div class="faculty-card">
+            <h2>Dr. Alan Brown</h2>
+            <p>Professor of Physics</p>
+            <p>Expertise: Quantum Mechanics, Thermodynamics</p>
+        </div>
+        <div class="faculty-card">
+            <h2>Dr. Emily White</h2>
+            <p>Professor of Biology</p>
+            <p>Expertise: Genetics, Microbiology</p>
+        </div>
+        <div class="faculty-card">
+            <h2>Dr. Robert Green</h2>
+            <p>Professor of Chemistry</p>
+            <p>Expertise: Organic Chemistry, Analytical Chemistry</p>
+        </div>
+        <div class="faculty-card">
+            <h2>Dr. Susan Black</h2>
+            <p>Professor of Economics</p>
+            <p>Expertise: Macroeconomics, Economic Policy</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Group of Institutes. All rights reserved.</p>
+        <button onclick="alert('Thank you for visiting!')">Contact Us</button>
+    </footer>
 </body>
 </html>
