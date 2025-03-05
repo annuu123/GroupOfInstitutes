@@ -1,9 +1,254 @@
 <!DOCTYPE html>
-<html>
-<head><title>Contact Us - Group of Institutes</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Group Of Institutions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
+        
+        body {
+            font-family: "Merriweather", serif;
+            background-image: url('background.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: black;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #0056b3;
+        }
+
+        .form-container {
+            background: transparent;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #004494;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .contact-info div {
+            width: 30%;
+        }
+
+        .contact-info h3 {
+            color: #0056b3;
+            font-size: 20px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        footer {
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            color: #d1d1e0;
+            background-color: rgba(42, 42, 64, 0.8);
+            position: fixed;
+            bottom: -10%; /* Initially hidden below the viewport */
+            left: 0;
+            padding: 10px 0;
+            transition: bottom 0.5s ease-in-out;
+        }
+
+        body:hover footer {
+            bottom: 0; /* Footer appears on hover */
+        }
+
+        footer button {
+            margin: 5px;
+            width: 10%;
+            padding: 8px 12px;
+            background-color: #5a5aa6;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        footer button:hover {
+            background-color: #444488;
+        }
+    </style>
+</head>
 <body>
-    <h1>Contact Us</h1>
-    <p>Contact form and details.</p>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/api/dashboard">Home</a></li>
+                <li><a href="/api/aboutus">Faculty</a></li>
+                <li><a href="/api/events">Events</a></li>
+                <li><a href="/api/courses">Courses</a></li>
+                <li><a href="/api/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Group of Institutions</h1>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Get in Touch with Us</h2>
+            
+            <form action="#" method="POST" class="form-container">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+
+            <div class="contact-info">
+                <div>
+                    <h3>Contact Details</h3>
+                    <p>Email: info@groupofinstitutes.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                    <p>Address: 123 Institute Street, City, Country</p>
+                </div>
+
+                <div>
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+
+                <div>
+                    <h3>Social Media</h3>
+                    <p><a href="https://facebook.com/groupofinstitutes" target="_blank">Facebook</a></p>
+                    <p><a href="https://twitter.com/groupofinst" target="_blank">Twitter</a></p>
+                    <p><a href="https://linkedin.com/company/groupofinstitutes" target="_blank">LinkedIn</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Group of Institutes. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
-
