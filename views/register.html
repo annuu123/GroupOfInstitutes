@@ -82,10 +82,14 @@
             position: absolute;
             left: 0;
             padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         footer button {
             margin: 5px;
-            width: 10%;
+            width: 100%;
             padding: 5px 10px;
             background-color: #5a5aa6;
             border: none;
@@ -96,6 +100,10 @@
         }
         footer button:hover {
             background-color: #444488;
+        }
+        footer div {
+            display: flex;
+            gap: 10px; /* Added gap between buttons */
         }
     </style>
 </head>
@@ -112,8 +120,14 @@
 </div>
 <footer>
     <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
-    <button>About Us</button>
-    <button>Contact</button>
+    <div>
+        <form action="/api/aboutus" method="GET">
+            <button type="submit">About Us</button>
+        </form>
+        <form action="/api/contact" method="GET">
+            <button type="submit">Contact</button>
+        </form>
+    </div>
 </footer>
 </body>
 </html>
