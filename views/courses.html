@@ -1,8 +1,278 @@
 <!DOCTYPE html>
-<html>
-<head><title>Courses - Group of Institutes</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Group Of Institutions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
+        
+        body {
+            font-family: "Merriweather", serif;
+            background-image: url('background.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: black;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .institution-name {
+            font-size: 50px;
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .course-category {
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+        }
+
+        .course-category h3 {
+            color: #0056b3;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .course-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .course-item h4 {
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .course-item p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        footer {
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            color: #d1d1e0;
+            background-color: rgba(42, 42, 64, 0.8);
+            position: fixed;
+            bottom: -10%; /* Initially hidden below the viewport */
+            left: 0;
+            padding: 10px 0;
+            transition: bottom 0.5s ease-in-out;
+        }
+
+        body:hover footer {
+            bottom: 0; /* Footer appears on hover */
+        }
+
+        footer button {
+            margin: 5px;
+            width: 10%;
+            padding: 8px 12px;
+            background-color: #5a5aa6;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        footer button:hover {
+            background-color: #444488;
+        }
+    </style>
+</head>
 <body>
-    <h1>Our Courses</h1>
-    <p>Details of courses offered.</p>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/api/dashboard">Home</a></li>
+                <li><a href="/api/aboutus">Faculty</a></li>
+                <li><a href="/api/events">Events</a></li>
+                <li><a href="/api/courses">Courses</a></li>
+                <li><a href="/api/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="institution-name">
+            Group of Institutions
+        </div>
+        <h1>Our Courses</h1>
+
+        <!-- Engineering Courses -->
+        <div class="course-category">
+            <h3>Engineering Courses</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1581091012185-e7084e8b5435" alt="B.Tech Computer Science">
+                    <h4>Bachelor of Technology (B.Tech) - Computer Science</h4>
+                    <p>This course covers fundamental and advanced topics in computer science, preparing students for a career in software development, IT, and related fields.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1604594433064-e2b10493332f" alt="B.Tech Mechanical Engineering">
+                    <h4>Bachelor of Technology (B.Tech) - Mechanical Engineering</h4>
+                    <p>Focused on the design, development, and maintenance of mechanical systems, this course provides practical and theoretical knowledge in engineering.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1562760764-43be58b9f6e4" alt="B.Tech Civil Engineering">
+                    <h4>Bachelor of Technology (B.Tech) - Civil Engineering</h4>
+                    <p>Learn about the construction and maintenance of infrastructure such as buildings, roads, and bridges in this comprehensive engineering course.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Designing Courses -->
+        <div class="course-category">
+            <h3>Designing Courses</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1524845511164-3c01469b0282" alt="Graphic Designing">
+                    <h4>Diploma in Graphic Designing</h4>
+                    <p>This course focuses on digital arts, visual communication, and graphic design software to create visually appealing designs.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1576050355925-36519bc02d91" alt="Fashion Design">
+                    <h4>Bachelor of Design (B.Des) - Fashion Design</h4>
+                    <p>Learn the fundamentals of fashion design, including fabric, pattern-making, and garment construction to become a fashion industry expert.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1551985401-7a27e40f5c6f" alt="Industrial Design">
+                    <h4>Master of Design (M.Des) - Industrial Design</h4>
+                    <p>This master's program focuses on creating functional, innovative, and aesthetically pleasing industrial products.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Science Courses -->
+        <div class="course-category">
+            <h3>Science Courses</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1568579462-4896d6e2a6b7" alt="B.Sc Physics">
+                    <h4>Bachelor of Science (B.Sc) - Physics</h4>
+                    <p>A comprehensive course that covers both theoretical and experimental aspects of physics, ideal for students interested in scientific research.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1574232382154-548ec231c4f3" alt="B.Sc Chemistry">
+                    <h4>Bachelor of Science (B.Sc) - Chemistry</h4>
+                    <p>This course delves into the principles of chemistry and its applications in various industries, including pharmaceuticals and manufacturing.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1552962267-62d314d3a3c1" alt="M.Sc Biology">
+                    <h4>Master of Science (M.Sc) - Biology</h4>
+                    <p>An advanced course in biology, focusing on molecular biology, genetics, and ecology to prepare students for careers in research and healthcare.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Master's Programs -->
+        <div class="course-category">
+            <h3>Master's Programs</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1572264523837-79c5395bcb4a" alt="MBA Business">
+                    <h4>Master of Business Administration (MBA)</h4>
+                    <p>This program prepares students for leadership roles in the business world, covering topics like management, marketing, and finance.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1587613375471-688e7e5c7fe6" alt="M.Tech Computer Science">
+                    <h4>Master of Technology (M.Tech) - Computer Science</h4>
+                    <p>For students interested in pursuing advanced studies in computer science, this course covers topics such as machine learning, artificial intelligence, and data science.</p>
+                </div>
+                <div class="course-item">
+                    <img src="https://images.unsplash.com/photo-1528300730049-d8c4d2d9ba51" alt="MA English Literature">
+                    <h4>Master of Arts (MA) - English Literature</h4>
+                    <p>This course offers an in-depth study of English literature, critical theory, and cultural studies, preparing students for careers in education, publishing, and writing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Group of Institutes. All rights reserved.</p>
+        <button>Contact Us</button>
+        <button>Apply Now</button>
+    </footer>
 </body>
 </html>
