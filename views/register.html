@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html>
-<head><title>Register - Group of Institutes</title></head>
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Register - Group of Institutes</title>
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            background-image: url(WhatsApp\ Image\ 2025-03-04\ at\ 20.00.54_420c2b13.jpg);
+            background-repeat: no-repeat;
+        }
+        .merriweather-regular {
+            font-family: "Merriweather", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .container {
+            background-color: #2a2a40;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            width: 400px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #d1d1e0;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #3b3b54;
+            color: #ffffff;
+            outline: none;
+        }
+        button {
+            width: 30%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5a5aa6;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #444488;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+        /* Footer */
+        footer {
+            width: 100%;
+            height: 12%;
+            text-align: center;
+            color: #d1d1e0;
+            background-color: rgba(42, 42, 64, 0.8);
+            bottom: 0;
+            position: absolute;
+            left: 0;
+            padding: 10px 0;
+        }
+        footer button {
+            margin: 5px;
+            width: 10%;
+            padding: 5px 10px;
+            background-color: #5a5aa6;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        footer button:hover {
+            background-color: #444488;
+        }
+    </style>
+</head>
 <body>
-    <h1>Register</h1>
+<div class="container">
+    <h1>Create Your Account</h1>
     <form action="/api/register" method="POST">
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Register</button>
-    </form>
+        <button type="submit">Register</button><br><br>
+        <h>Already have an account?</h>
+   <a href="/api/login">Login</a>
+</form>
+</div>
+<footer>
+    <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
+    <button>About Us</button>
+    <button>Contact</button>
+</footer>
 </body>
 </html>
