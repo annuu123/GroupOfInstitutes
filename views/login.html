@@ -35,6 +35,7 @@
         }
         .login-container h2 {
             margin-bottom: 20px;
+            
         }
         input {
             width: 100%;
@@ -97,13 +98,13 @@
     <div class="heading">Group of Institutions</div>
     <div class="login-container">
         <h2>Login</h2>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
+        <form action="/api/login"  method="POST">
+            <input type="text" name="username" placeholder="Enter Username">
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit" class="login-btn">Login</button>
         </form>
         <div class="signup-link">
-            Don't have an account? <a href="#">Sign Up</a>
+            Don't have an account? <a href="/api/register">Sign Up</a>
         </div>
     </div>
     <footer>
@@ -119,4 +120,3 @@
     </footer>
 </body>
 </html>
-
