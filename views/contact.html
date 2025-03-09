@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Group Of Institutions</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
-        
+
         body {
             font-family: "Merriweather", serif;
             background-image: url('background.jpg'); /* Replace with your background image */
@@ -54,9 +55,9 @@
             padding: 50px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Ensures the contact form stays at the top */
             width: 100%;
-            height: 80%;
+            flex-grow: 1; /* Allow the container to grow and take available space */
         }
 
         .card {
@@ -66,6 +67,7 @@
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             width: 100%;
+            margin-bottom: 40px; /* Ensure space between form and footer */
         }
 
         h1 {
@@ -96,7 +98,8 @@
             color: #0056b3;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -130,6 +133,7 @@
             padding: 20px;
             max-width: 900px;
             width: 100%;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
         }
 
         .contact-info div {
@@ -146,20 +150,19 @@
             line-height: 1.6;
         }
 
-       footer {
+        footer {
             width: 100%;
             height: 12%;
             text-align: center;
             color: #d1d1e0;
             background-color: rgba(42, 42, 64, 0.8);
-            bottom: 0;
-            left: 0;
             padding: 10px 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
         footer button {
             margin: 5px;
             width: 100%;
@@ -171,15 +174,21 @@
             cursor: pointer;
             transition: background 0.3s;
         }
+
         footer button:hover {
             background-color: #444488;
         }
+
         footer div {
             display: flex;
             gap: 10px; /* Added gap between buttons */
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            justify-content: center;
         }
+
     </style>
 </head>
+
 <body>
 
     <header>
@@ -195,22 +204,22 @@
     </header>
 
     <h1>Group of Institutions</h1>
-    
+
     <div class="container">
         <div class="card">
             <h2>Get in Touch with Us</h2>
-            
+
             <form action="#" method="POST" class="form-container">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required placeholder="Enter your name">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Your Email</label>
                     <input type="email" id="email" name="email" required placeholder="Enter your email address">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="message">Your Message</label>
                     <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
@@ -247,16 +256,17 @@
     </div>
 
     <footer>
-    <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
-    <div>
-        <form action="/api/aboutus" method="GET">
-            <button type="submit">About Us</button>
-        </form>
-        <form action="/api/contact" method="GET">
-            <button type="submit">Contact</button>
-        </form>
-    </div>
-</footer>
+        <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
+        <div>
+            <form action="/api/aboutus" method="GET">
+                <button type="submit">About Us</button>
+            </form>
+            <form action="/api/contact" method="GET">
+                <button type="submit">Contact</button>
+            </form>
+        </div>
+    </footer>
 
 </body>
+
 </html>
