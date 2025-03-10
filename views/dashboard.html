@@ -1,286 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Group of Institutes</title>
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Group of Institutes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: 'Arial', sans-serif;
-        background: #f4f4f9;
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; /* Ensure body takes full viewport height */
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
-        background-color: #0056b3;
-        color: #fff;
-        padding: 1em;
-        text-align: center;
+      background-color: #0056b3;
+      color: white;
+      padding: 1em 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo h2 {
+      margin: 0;
     }
 
     nav ul {
-        list-style: none;
-        text-align: center;
-    }
-
-    nav ul li {
-        display: inline;
-        margin: 0 15px;
+      list-style: none;
+      display: flex;
+      gap: 15px;
     }
 
     nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
     }
 
     nav ul li a:hover {
-        color: #f39c12;
+      color: #f39c12;
     }
 
     .dashboard-container {
-        display: flex;
-        flex: 1; /* Allow dashboard container to grow and take remaining space */
+      display: flex;
+      flex: 1;
     }
 
     .sidebar {
-        width: 250px;
-        background: #34495e;
-        color: #fff;
-        padding: 20px;
+      width: 250px;
+      background: #34495e;
+      color: white;
+      padding: 20px;
     }
 
     .sidebar h3 {
-        text-align: center;
-        margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     .sidebar ul {
-        list-style: none;
+      list-style: none;
     }
 
     .sidebar ul li {
-        padding: 10px;
-        margin-bottom: 10px;
-        background: #2c3e50;
-        cursor: pointer;
-        text-align: center;
+      margin-bottom: 10px;
     }
 
-    .sidebar ul li:hover {
-        background: #f39c12;
+    .sidebar ul li a {
+      display: block;
+      padding: 10px;
+      background: #2c3e50;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .sidebar ul li a:hover {
+      background: #f39c12;
+      color: #000;
     }
 
     main {
-        flex: 1;
-        padding: 20px;
+      flex: 1;
+      padding: 20px;
     }
 
     .welcome-section {
-        margin-bottom: 20px;
-        text-align: center;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     .overview {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
     }
 
     .card {
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        text-align: center;
-        border-radius: 10px;
-        transition: transform 0.3s;
+      background: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
-        transform: scale(1.05);
+      transform: scale(1.05);
     }
 
     .card i {
-        font-size: 40px;
-        margin-bottom: 10px;
-        color: #f39c12;
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #f39c12;
     }
 
     table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
     }
 
     table th, table td {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid #ddd;
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
     }
 
     footer {
-            width: 100%;
-            height: 12%;
-            text-align: center;
-            color: #d1d1e0;
-            background-color: rgba(42, 42, 64, 0.8);
-            bottom: 0;
-            position: absolute;
-            left: 0;
-            padding: 10px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        footer button {
-            margin: 5px;
-            width: 100%;
-            padding: 5px 10px;
-            background-color: #5a5aa6;
-            border: none;
-            border-radius: 5px;
-            color: #ffffff;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        footer button:hover {
-            background-color: #444488;
-        }
-        footer div {
-            display: flex;
-            gap: 10px; /* Added gap between buttons */
-        }
-
-    /* Updated Navigation Bar Style */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
+      background-color: rgba(42, 42, 64, 0.8);
+      color: #d1d1e0;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: auto;
     }
 
-    nav .logo h2 {
-        margin: 0;
+    footer div {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
     }
 
-    nav ul {
-        margin: 0;
-        padding: 0;
+    footer button {
+      padding: 6px 12px;
+      background-color: #5a5aa6;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-</style>
+
+    footer button:hover {
+      background-color: #444488;
+    }
+  </style>
+</head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h2>Group of Institutes</h2>
-            </div>
-            <ul>
-                <li><a href="/api/dashboard">Home</a></li>
-                <li><a href="/api/faculty">Faculty</a></li>
-                <li><a href="/api/events">Events</a></li>
-                <li><a href="/api/courses">Courses</a></li>
-                <li><a href="/api/gallery">Gallery</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <div class="logo">
+        <h2>Group of Institutes</h2>
+      </div>
+      <ul>
+        <li><a href="/api/dashboard">Home</a></li>
+        <li><a href="/api/faculty">Faculty</a></li>
+        <li><a href="/api/events">Events</a></li>
+        <li><a href="/api/courses">Courses</a></li>
+        <li><a href="/api/gallery">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <h3>Dashboard Menu</h3>
-            <ul>
-                <li><a href="students.html">Manage Students</a></li>
-                <li><a href="staff.html">Manage Staff</a></li>
-                <li><a href="courses.html">View Courses</a></li>
-                <li><a href="reports.html">Generate Reports</a></li>
-                <li><a href="settings.html">Settings</a></li>
-            </ul>
-        </aside>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h3>Dashboard Menu</h3>
+      <ul>
+        <li><a href="students.html">Manage Students</a></li>
+        <li><a href="staff.html">Manage Staff</a></li>
+        <li><a href="courses.html">View Courses</a></li>
+        <li><a href="reports.html">Generate Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </aside>
 
-        <main>
-            <div class="welcome-section">
-                <h1>Welcome, Admin</h1>
-                <p>Here's a quick summary of your institute.</p>
-            </div>
+    <main>
+      <div class="welcome-section">
+        <h1>Welcome, Admin</h1>
+        <p>Here's a quick summary of your institute.</p>
+      </div>
 
-            <section class="overview">
-                <div class="card">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>Total Students</h3>
-                    <p>1200</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Total Staff</h3>
-                    <p>150</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Courses Available</h3>
-                    <p>35</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Pending Enrollments</h3>
-                    <p>10</p>
-                </div>
-            </section>
-
-            <section class="activity">
-                <h2>Recent Activities</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Activity</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>03 March 2025</td>
-                            <td>New Student Enrolled</td>
-                            <td>✅ Completed</td>
-                        </tr>
-                        <tr>
-                            <td>02 March 2025</td>
-                            <td>Staff Member Added</td>
-                            <td>✅ Completed</td>
-                        </tr>
-                        <tr>
-                            <td>01 March 2025</td>
-                            <td>Course Updated</td>
-                            <td>⏳ Pending</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
-        <div>
-            <form action="/api/aboutus" method="GET">
-                <button type="submit">About Us</button>
-            </form>
-            <form action="/api/contact" method="GET">
-                <button type="submit">Contact</button>
-            </form>
+      <section class="overview">
+        <div class="card">
+          <i class="fas fa-user-graduate"></i>
+          <h3>Total Students</h3>
+          <p>1200</p>
         </div>
-    </footer>
+        <div class="card">
+          <i class="fas fa-users"></i>
+          <h3>Total Staff</h3>
+          <p>150</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-book"></i>
+          <h3>Courses Available</h3>
+          <p>35</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-clock"></i>
+          <h3>Pending Enrollments</h3>
+          <p>10</p>
+        </div>
+      </section>
+
+      <section class="activity">
+        <h2>Recent Activities</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Activity</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>03 March 2025</td>
+              <td>New Student Enrolled</td>
+              <td>✅ Completed</td>
+            </tr>
+            <tr>
+              <td>02 March 2025</td>
+              <td>Staff Member Added</td>
+              <td>✅ Completed</td>
+            </tr>
+            <tr>
+              <td>01 March 2025</td>
+              <td>Course Updated</td>
+              <td>⏳ Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
+    <div>
+      <form action="/api/aboutus" method="GET">
+        <button type="submit">About Us</button>
+      </form>
+      <form action="/api/contact" method="GET">
+        <button type="submit">Contact</button>
+      </form>
+    </div>
+  </footer>
 </body>
 </html>

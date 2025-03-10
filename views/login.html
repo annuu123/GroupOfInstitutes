@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <style>
@@ -35,7 +35,6 @@
         }
         .login-container h2 {
             margin-bottom: 20px;
-            
         }
         input {
             width: 100%;
@@ -58,6 +57,10 @@
         }
         .signup-link {
             margin-top: 10px;
+        }
+        .signup-link a {
+            color: #0056b3;
+            text-decoration: none;
         }
         footer {
             width: 100%;
@@ -96,17 +99,19 @@
 </head>
 <body>
     <div class="heading">Group of Institutions</div>
+
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/api/login"  method="POST">
-            <input type="text" name="username" placeholder="Enter Username">
-            <input type="password" name="password" placeholder="Password" required>
+        <form action="/api/login" method="POST">
+            <input type="text" name="username" placeholder="Enter Username" required />
+            <input type="password" name="password" placeholder="Enter Password" required />
             <button type="submit" class="login-btn">Login</button>
         </form>
         <div class="signup-link">
             Don't have an account? <a href="/api/register">Sign Up</a>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
         <div>

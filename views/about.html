@@ -9,7 +9,7 @@
         
         body {
             font-family: "Merriweather", serif;
-            background-image: url('https://images.unsplash.com/photo-1542404937-2132aa1fa6fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Updated background image */
+            background-image: url('https://images.unsplash.com/photo-1542404937-2132aa1fa6fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -73,12 +73,12 @@
 
         .container {
             text-align: center;
-            padding: 120px 50px 50px; /* Adjusted gap between nav bar and heading */
+            padding: 120px 50px 50px;
         }
 
         h1 {
             font-size: 48px;
-            margin-top: 30px; /* Added space below navbar */
+            margin-top: 30px;
         }
 
         .about-us {
@@ -87,6 +87,25 @@
             padding: 20px;
             border-radius: 10px;
             backdrop-filter: blur(16px);
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: 30%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         footer {
@@ -117,11 +136,6 @@
         footer button:hover {
             background-color: #444488;
         }
-        
-        footer div {
-            display: flex;
-            gap: 10px; /* Added gap between buttons */
-        }
     </style>
 </head>
 <body>
@@ -141,7 +155,7 @@
         <h1>Group Of Institutions</h1>
         <div class="about-us">
             <h2>About Us</h2>
-            <p>Welcome to Group of Institutions. We are committed to providing quality education and fostering a strong academic community.</p>
+           <p>Welcome to Group of Institutions. We are committed to providing quality education and fostering a strong academic community.</p>
             <p>Our institution offers a variety of courses designed to equip students with practical and theoretical knowledge.</p>
             <p>Our faculty members are experts in their respective fields, dedicated to guiding students towards success.</p>
             <p>We provide state-of-the-art facilities and a supportive learning environment for our students.</p>
@@ -151,9 +165,18 @@
             <p>Our alumni network helps in career guidance and professional networking opportunities.</p>
             <p>With a legacy of excellence, we strive to shape the leaders of tomorrow.</p>
             <p>Join us to embark on a journey of knowledge and growth at Group of Institutions.</p>
+            
+        </div>
+
+        <div class="gallery-container">
+            <% gallery.forEach(image => { %>
+                <div class="gallery-item">
+                    <img src="<%= image.url %>" alt="<%= image.description %>">
+                </div>
+            <% }) %>
         </div>
     </div>
-    
+
     <footer>
         <p>&copy; 2025 Group of Institutes. All Rights Reserved.</p>
         <div>
@@ -167,4 +190,3 @@
     </footer>
 </body>
 </html>
-

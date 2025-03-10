@@ -14,6 +14,7 @@ const requestTimer = require('./Middlewares/requestTimer')
 const app = express()
 const PORT = 8080
 
+
 // Core Middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -32,6 +33,10 @@ app.use(maintenance)
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/views/login.html');
+});
 
 // API Routes
 const apiRoutes = require('./api/apiRoutes')

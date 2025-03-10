@@ -10,7 +10,7 @@
 
         body {
             font-family: "Merriweather", serif;
-            background-image: url('background.jpg'); /* Replace with your background image */
+            background-image: url('/images/background.jpg'); /* Use this path for background image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -55,9 +55,9 @@
             padding: 50px;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Ensures the contact form stays at the top */
+            align-items: flex-start;
             width: 100%;
-            flex-grow: 1; /* Allow the container to grow and take available space */
+            flex-grow: 1;
         }
 
         .card {
@@ -67,7 +67,7 @@
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             width: 100%;
-            margin-bottom: 40px; /* Ensure space between form and footer */
+            margin-bottom: 40px;
         }
 
         h1 {
@@ -133,7 +133,7 @@
             padding: 20px;
             max-width: 900px;
             width: 100%;
-            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            flex-wrap: wrap;
         }
 
         .contact-info div {
@@ -181,11 +181,10 @@
 
         footer div {
             display: flex;
-            gap: 10px; /* Added gap between buttons */
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            gap: 10px;
+            flex-wrap: wrap;
             justify-content: center;
         }
-
     </style>
 </head>
 
@@ -209,7 +208,7 @@
         <div class="card">
             <h2>Get in Touch with Us</h2>
 
-            <form action="#" method="POST" class="form-container">
+            <form action="/api/contact" method="POST" class="form-container">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required placeholder="Enter your name">
